@@ -7,9 +7,10 @@
 *.sln.docstates
 
 # Build results
+#Seria bom ter os executáveis, então comentado o ignore em Release
 [Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
+#[Rr]elease/
 [Rr]eleases/
 x64/
 x86/
