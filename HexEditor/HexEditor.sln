@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexEditor", "HexEditor\HexEditor.csproj", "{066FDCB1-E931-410E-AB92-67D25EC9DDEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{066FDCB1-E931-410E-AB92-67D25EC9DDEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066FDCB1-E931-410E-AB92-67D25EC9DDEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066FDCB1-E931-410E-AB92-67D25EC9DDEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066FDCB1-E931-410E-AB92-67D25EC9DDEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
