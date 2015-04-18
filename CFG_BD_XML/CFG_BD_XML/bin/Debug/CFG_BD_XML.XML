@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CFG_BD_XML</name>
+    </assembly>
+    <members>
+        <member name="T:CFG_BD_XML.BD_Connection">
+            <summary>
+            Classe referente ao objeto contido no arquivo BD.XML,
+            responsável pela conexão do aplicativo com o banco de dados
+            </summary>
+        </member>
+        <member name="F:CFG_BD_XML.BD_Connection.NomeArquivo">
+            <summary>
+            Nome do arquivo BD.XML
+            </summary>
+        </member>
+        <member name="M:CFG_BD_XML.BD_Connection.#ctor">
+            <summary>
+            Inicializa um objeto do tipo BD_Connection em branco
+            </summary>
+        </member>
+        <member name="M:CFG_BD_XML.BD_Connection.#ctor(System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Inicializa um objeto do tipo BD_Connection, com os devidos atributos
+            </summary>
+            <param name="caminho">Caminho da instância SQL</param>
+            <param name="autenticacao">Modo de autenticação no SQL Server</param>
+            <param name="login">Login da conexão (Para modo de autenticação SQL)</param>
+            <param name="senha">Senha da conexão (Para modo de autenticação SQL)</param>
+            <param name="banco">Nome do banco de dados a se conectar</param>
+        </member>
+        <member name="M:CFG_BD_XML.BD_Connection.ExisteBDXML">
+            <summary>
+            Verifica se existe o arquivo BD.XML na pasta onde o programa está sendo executado
+            </summary>
+            <returns>Valor indicando se foi encontrado ou não o arquivo BD.XML</returns>
+        </member>
+        <member name="M:CFG_BD_XML.BD_Connection.LeuBDXML">
+            <summary>
+            <para>Verifica se foi lido o arquivo BD.XML, abrindo a tela de configuração de acesso ao banco
+            de dados caso não tenha sido encontrado o arquivo.</para>
+            <para>No caso de falha, a aplicação que chamou o método deve chamar System.Windows.Forms.Application.Exit() e return
+            para que o programa feche com sucesso.</para>
+            </summary>
+            <returns>Valor indicando se foi lido ou não o arquivo BD.XML</returns>
+        </member>
+        <member name="M:CFG_BD_XML.BD_Connection.CriarBDXML(CFG_BD_XML.BD_Connection)">
+            <summary>
+            Método responsável por gerar o arquivo BD.XML na pasta do programa
+            </summary>
+            <param name="connection">A Connection String na forma de objeto do tipo BD_Connection</param>
+        </member>
+        <member name="M:CFG_BD_XML.BD_Connection.ToString">
+            <summary>
+            Representação em String (ConnectionString) da conexão com o banco de dados
+            </summary>
+            <returns>A Connection String relacionada com o arquivo BD.XML</returns>
+        </member>
+        <member name="P:CFG_BD_XML.BD_Connection.Caminho">
+            <summary>
+            Caminho da Instância SQL
+            </summary>
+        </member>
+        <member name="P:CFG_BD_XML.BD_Connection.Autenticacao">
+            <summary>
+            Modo de Autenticação (0 = Windows, 2 = SQL Server)
+            </summary>
+        </member>
+        <member name="P:CFG_BD_XML.BD_Connection.Login">
+            <summary>
+            Login (Autenticação SQL Server)
+            </summary>
+        </member>
+        <member name="P:CFG_BD_XML.BD_Connection.Senha">
+            <summary>
+            Senha (Autenticação SQL Server)
+            </summary>
+        </member>
+        <member name="P:CFG_BD_XML.BD_Connection.Banco">
+            <summary>
+            Nome do banco de dados a ser utilizado.
+            </summary>
+        </member>
+        <member name="T:CFG_BD_XML.BD_Connection.CONSTANTES_AUTENTICACAO">
+            <summary>
+            Modos de autenticação no SQL Server
+            </summary>
+        </member>
+        <member name="T:CFG_BD_XML.BD_SQL">
+            <summary>
+            Classe que possui os métodos primordiais para realizar uma operação no banco de dados.
+            Esta classe não pode ser instanciada
+            </summary>
+        </member>
+        <member name="M:CFG_BD_XML.BD_SQL.ExecutaSelect(System.String)">
+            <summary>
+            Executa um comando SQL de consulta (Select) e retorna o resultado da consulta
+            </summary>
+            <param name="sql">O comando SQL para realizar a consulta</param>
+            <returns>O System.Data.DataTable contendo o resultado da consulta</returns>
+        </member>
+        <member name="M:CFG_BD_XML.BD_SQL.ExecutaSelect(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executa um comando SQL de consulta (Select) e retorna o resultado da consulta
+            </summary>
+            <param name="cmd">O System.Data.SqlClient.SqlCommand contendo o comando SQL, assim como a conexão pré-estabelecida</param>
+            <returns>O System.Data.DataTable contendo o resultado da consulta</returns>
+        </member>
+        <member name="M:CFG_BD_XML.BD_SQL.ExecutaSQL(System.String)">
+            <summary>
+            Executa um comando SQL e retorna o número de registros modificados no banco de dados
+            </summary>
+            <param name="sql">O comando SQL para ser executado</param>
+            <returns>O número de registros modificados no banco de dados</returns>
+        </member>
+        <member name="M:CFG_BD_XML.BD_SQL.ExecutaSQL(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executa um comando SQL e retorna o número de registros modificados no banco de dados
+            </summary>
+            <param name="cmd">O System.Data.SqlClient.SqlCommand contendo o comando SQL, assim como a conexão pré-estabelecida</param>
+            <returns>O número de registros modificados no banco de dados</returns>
+        </member>
+        <member name="M:CFG_BD_XML.BD_SQL.ExecutaScalar(System.String)">
+            <summary>
+            Executa um comando SQL e retorna a primeira coluna do primeiro registro do resultado
+            </summary>
+            <param name="sql">O comando SQL para ser executado</param>
+            <returns>A primeira coluna da primeira linha do resultado do comando</returns>
+        </member>
+        <member name="M:CFG_BD_XML.BD_SQL.ExecutaScalar(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executa um comando SQL e retorna a primeira coluna do primeiro registro do resultado
+            </summary>
+            <param name="cmd">O System.Data.SqlClient.SqlCommand contendo o comando SQL, assim como a conexão pré-estabelecida</param>
+            <returns>A primeira coluna da primeira linha do resultado do comando</returns>
+        </member>
+        <member name="P:CFG_BD_XML.BD_SQL.ConnectionString">
+            <summary>
+            Connection String a ser utilizada nas conexões com o banco de dados pela aplicação
+            </summary>
+        </member>
+        <member name="P:CFG_BD_XML.BD_SQL.Connection">
+            <summary>
+            Conexão com o banco de dados
+            </summary>
+        </member>
+        <member name="F:CFG_BD_XML.frConexaoBD.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:CFG_BD_XML.frConexaoBD.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:CFG_BD_XML.frConexaoBD.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:CFG_BD_XML.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:CFG_BD_XML.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CFG_BD_XML.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CFG_BD_XML.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
