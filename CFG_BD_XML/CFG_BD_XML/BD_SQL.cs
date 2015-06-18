@@ -20,11 +20,21 @@ namespace CFG_BD_XML
         public static String ConnectionString { get; set; }
 
         /// <summary>
+        /// Singleton da conexão
+        /// </summary>
+        private static SqlConnection _connection = null;
+
+        /// <summary>
         /// Conexão com o banco de dados
         /// </summary>
         public static SqlConnection Connection
         {
-            get { return new SqlConnection(ConnectionString); }
+            get
+            {
+                if (_connection == null)
+                    _connection = new SqlConnection(ConnectionString);
+                return _connection;
+            }
         }
 
         /// <summary>
