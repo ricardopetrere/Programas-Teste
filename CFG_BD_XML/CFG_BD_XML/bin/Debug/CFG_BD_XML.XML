@@ -145,6 +145,41 @@
             Conexão com o banco de dados
             </summary>
         </member>
+        <member name="T:CFG_BD_XML.frConexaoBD">
+            <summary>
+            Form de conexão ao banco de dados
+            </summary>
+        </member>
+        <member name="M:CFG_BD_XML.frConexaoBD.#ctor">
+            <summary>
+            Instancia um objeto da classe <see cref="T:CFG_BD_XML.frConexaoBD"/>
+            </summary>
+        </member>
+        <member name="M:CFG_BD_XML.frConexaoBD.PossuiTodosOsCampos">
+            <summary>
+            Método responsável por validar se o usuário preencheu todos os campos necessários
+            para se salvar as configurações de acesso à base de dados.
+            <para/>
+            Será exibido um indicador de erro do <see cref="T:System.Windows.Forms.ErrorProvider"/> para cada campo necessário não preenchido.
+            </summary>
+            <returns>O resultado da validação (Se possui todos os campos ou não)</returns>
+        </member>
+        <member name="M:CFG_BD_XML.frConexaoBD.ValidaSairSemSalvar">
+            <summary>
+            Indica se o usuário desejou sair sem salvar as configurações realizadas.
+            </summary>
+            <returns>O resultado da validação (Usuário saiu sem salvar as novas configurações ou não)</returns>
+        </member>
+        <member name="M:CFG_BD_XML.frConexaoBD.SalvarConfiguracao">
+            <summary>
+            Salva as configurações de acesso realizadas
+            </summary>
+        </member>
+        <member name="M:CFG_BD_XML.frConexaoBD.ListarBancos">
+            <summary>
+            Método responsável por listar os bancos de dados disponíveis com base na conexão especificada nos campos da tela.
+            </summary>
+        </member>
         <member name="F:CFG_BD_XML.frConexaoBD.components">
             <summary>
             Required designer variable.
