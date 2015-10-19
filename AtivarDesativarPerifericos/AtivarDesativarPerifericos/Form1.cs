@@ -42,18 +42,21 @@ namespace AtivarDesativarPerifericos
             }
         }
 
-        private void btnConfigurarAcessoBD_Click(object sender, EventArgs e)
-        {
-            //frConexaoBD conexao = new frConexaoBD();
-            //if (conexao.ShowDialog() == DialogResult.OK)
-            //    PreencherDataGridView();
-            //else
-            //    Application.Exit();
-        }
-
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             PreencherDataGridView();
+        }
+
+        private void btnConfigurarConexao_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Deseja reconfigurar o acesso a base de dados?","Atenção"
+                ,MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation)==DialogResult.Yes)
+            {
+                if (new frConexaoBD().ShowDialog() == DialogResult.OK)
+                {
+                    PreencherDataGridView();
+                }
+            }
         }
     }
 }

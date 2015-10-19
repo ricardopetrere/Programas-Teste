@@ -16,21 +16,11 @@ namespace AtivarDesativarPerifericos
         public static String ConnectionString { get; set; }
 
         /// <summary>
-        /// Singleton da conexão
-        /// </summary>
-        private static SqlConnection _connection = null;
-
-        /// <summary>
         /// Conexão com o banco de dados
         /// </summary>
         public static SqlConnection Connection
         {
-            get
-            {
-                if (_connection == null)
-                    _connection = new SqlConnection(ConnectionString);
-                return _connection;
-            }
+            get { return new SqlConnection(ConnectionString); }
         }
 
         /// <summary>
