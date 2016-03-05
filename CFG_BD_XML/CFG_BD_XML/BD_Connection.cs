@@ -64,6 +64,30 @@ namespace CFG_BD_XML
             Banco = banco;
         }
 
+        public BD_Connection(System.Data.SqlClient.SqlConnection conn)
+            : this(conn.ConnectionString)
+        {
+            //http://stackoverflow.com/questions/5555715/c-sharp-constructors-overloading
+        }
+        public BD_Connection(String connectionstring)
+        {
+            //https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnectionstringbuilder.aspx
+            System.Data.SqlClient.SqlConnectionStringBuilder conn = new System.Data.SqlClient.SqlConnectionStringBuilder(connectionstring);
+            Caminho = conn.DataSource;
+            if (conn.IntegratedSecurity)
+            {
+                Autenticacao = (int)BD_Connection.CONSTANTES_AUTENTICACAO.AUTENTICACAO_WINDOWS;
+                Login = Environment.UserDomainName;
+            }
+            else
+            {
+                Autenticacao = (int)BD_Connection.CONSTANTES_AUTENTICACAO.AUTENTICACAO_SQLSERVER;
+                Login = conn.UserID;
+                Senha = conn.Password;
+            }
+            Banco = conn.InitialCatalog;
+        }
+
         /// <summary>
         /// Nome do arquivo BD.XML
         /// </summary>

@@ -30,6 +30,7 @@ namespace AtivarDesativarPerifericos
             txtLogin.Enabled = rbAutenticacaoSQLServer.Checked;
             txtSenha.Enabled = rbAutenticacaoSQLServer.Checked;
             txtLogin.Text = !rbAutenticacaoSQLServer.Checked ? Environment.UserName : "";//Verificar se não dá problema com login de rede
+            txtSenha.Text = "";
             if (rbAutenticacaoSQLServer.Checked)
                 txtLogin.Focus();
         }
@@ -56,6 +57,10 @@ namespace AtivarDesativarPerifericos
         private void frConexaoBD_Load(object sender, EventArgs e)
         {
             rbAutenticacaoWindows.Checked = true;
+            if(!String.IsNullOrEmpty(BD_SQL.ConnectionString))
+            {
+                CarregaConfiguracao();
+            }
         }
 
         private void cbBanco_Enter(object sender, EventArgs e)
@@ -127,6 +132,7 @@ namespace AtivarDesativarPerifericos
             conn.Login = txtLogin.Text;
             conn.Senha = txtSenha.Text;
             conn.Banco = cbBanco.SelectedItem.ToString();
+            BD_SQL.ConnectionString = conn.ToString();
             BD_Connection.CriarBDXML(conn);
             DialogResult = DialogResult.OK;
             this.Close();
@@ -167,6 +173,25 @@ namespace AtivarDesativarPerifericos
             {
                 conn.Close();
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void CarregaConfiguracao()
+        {
+            BD_Connection conn = new BD_Connection(BD_SQL.Connection);
+            txtCaminho.Text = conn.Caminho;
+            if (conn.Autenticacao == (int)BD_Connection.CONSTANTES_AUTENTICACAO.AUTENTICACAO_WINDOWS)
+                rbAutenticacaoWindows.Checked = true;
+            else if (conn.Autenticacao == (int)BD_Connection.CONSTANTES_AUTENTICACAO.AUTENTICACAO_SQLSERVER)
+            {
+                rbAutenticacaoSQLServer.Checked = true;
+                txtLogin.Text = conn.Login;
+                txtSenha.Text = conn.Senha;
+            }
+            ListarBancos();
+            cbBanco.SelectedItem = conn.Banco;
         }
         #endregion
     }

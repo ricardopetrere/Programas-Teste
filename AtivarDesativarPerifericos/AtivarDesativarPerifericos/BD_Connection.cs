@@ -64,6 +64,30 @@ namespace AtivarDesativarPerifericos
             Banco = banco;
         }
 
+        public BD_Connection(System.Data.SqlClient.SqlConnection conn)
+            : this(conn.ConnectionString)
+        {
+            //http://stackoverflow.com/questions/5555715/c-sharp-constructors-overloading
+        }
+        public BD_Connection(String connectionstring)
+        {
+            //https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnectionstringbuilder.aspx
+            System.Data.SqlClient.SqlConnectionStringBuilder conn = new System.Data.SqlClient.SqlConnectionStringBuilder(connectionstring);
+            Caminho = conn.DataSource;
+            if (conn.IntegratedSecurity)
+            {
+                Autenticacao = (int)BD_Connection.CONSTANTES_AUTENTICACAO.AUTENTICACAO_WINDOWS;
+                Login = Environment.UserDomainName;
+            }
+            else
+            {
+                Autenticacao = (int)BD_Connection.CONSTANTES_AUTENTICACAO.AUTENTICACAO_SQLSERVER;
+                Login = conn.UserID;
+                Senha = conn.Password;
+            }
+            Banco = conn.InitialCatalog;
+        }
+
         /// <summary>
         /// Nome do arquivo BANCO.XML
         /// </summary>
@@ -116,7 +140,7 @@ namespace AtivarDesativarPerifericos
         /// <param name="connection">A Connection String na forma de objeto do tipo BD_Connection</param>
         public static void CriarBDXML(BD_Connection connection)
         {
-			//Inicializa o serializador XML com base no tipo do objeto "connection"
+            //Inicializa o serializador XML com base no tipo do objeto "connection"
             XmlSerializer writer = new XmlSerializer(connection.GetType());
             //Inicializa o objeto responsável por gravar o arquivo "BANCO.XML"
             StreamWriter arquivo = new StreamWriter(NomeArquivo);

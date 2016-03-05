@@ -98,6 +98,7 @@
             // 
             // btnConfigurarConexao
             // 
+            this.btnConfigurarConexao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConfigurarConexao.Location = new System.Drawing.Point(407, 68);
             this.btnConfigurarConexao.Name = "btnConfigurarConexao";
             this.btnConfigurarConexao.Size = new System.Drawing.Size(70, 50);
