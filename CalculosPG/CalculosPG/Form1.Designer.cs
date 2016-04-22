@@ -39,6 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPrimeiroTermo = new System.Windows.Forms.TextBox();
             this.btnCalcular = new System.Windows.Forms.Button();
+            this.btnCriarAtalho = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,19 +134,35 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(339, 12);
+            this.btnCalcular.Location = new System.Drawing.Point(339, 9);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(56, 72);
+            this.btnCalcular.Size = new System.Drawing.Size(56, 34);
             this.btnCalcular.TabIndex = 3;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            // 
+            // btnCriarAtalho
+            // 
+            this.btnCriarAtalho.Location = new System.Drawing.Point(339, 50);
+            this.btnCriarAtalho.Name = "btnCriarAtalho";
+            this.btnCriarAtalho.Size = new System.Drawing.Size(56, 34);
+            this.btnCriarAtalho.TabIndex = 13;
+            this.btnCriarAtalho.Text = "Criar Atalho";
+            this.btnCriarAtalho.UseVisualStyleBackColor = true;
+            this.btnCriarAtalho.Click += new System.EventHandler(this.btnCriarAtalho_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileName = "Atalho - CalculosPG";
+            this.saveFileDialog1.Filter = "Atalhos|*.lnk";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 134);
+            this.Controls.Add(this.btnCriarAtalho);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPrimeiroTermo);
             this.Controls.Add(this.btnCalcular);
@@ -159,7 +177,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "Cálculos de soma de itens de PG";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,6 +198,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPrimeiroTermo;
         private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Button btnCriarAtalho;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

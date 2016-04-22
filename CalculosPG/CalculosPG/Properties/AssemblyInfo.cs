@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CalculosPG")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Cálculos PG")]
+[assembly: AssemblyDescription("Cálculo da soma de termos de uma PG")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CalculosPG")]
+[assembly: AssemblyCompany("Ricardo Petrére")]
+[assembly: AssemblyProduct("Cálculos PG")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
