@@ -46,7 +46,8 @@ namespace CalculosPG
             //shortcut.Save();
             WshShell wsh = new WshShell();
             IWshRuntimeLibrary.IWshShortcut shortcut = wsh.CreateShortcut(nomearquivo) as IWshRuntimeLibrary.IWshShortcut;
-            shortcut.Arguments = string.Format("{0} {1} {2}", txtPrimeiroTermo.Text, txtRazao.Text, txtQuantidadeTermos.Text);
+            //shortcut.Arguments = string.Format("{0} {1} {2}", txtPrimeiroTermo.Text, txtRazao.Text, txtQuantidadeTermos.Text);
+            shortcut.Arguments = $"{txtPrimeiroTermo.Text} {txtRazao.Text} {txtQuantidadeTermos.Text}";//Praticando C#6
             shortcut.TargetPath = Application.ExecutablePath;
             shortcut.WindowStyle = 1;
             shortcut.WorkingDirectory = Application.StartupPath;
