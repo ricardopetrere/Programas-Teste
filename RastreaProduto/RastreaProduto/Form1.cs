@@ -15,7 +15,9 @@ namespace RastreaProduto
         public Form1()
         {
             InitializeComponent();
+            Text = Titulo;
         }
+        string Titulo = "Rastreio de código de produto: ";
 
         public Form1(string pedido)
         {
@@ -27,6 +29,7 @@ namespace RastreaProduto
         private void button1_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate("http://websro.correios.com.br/sro_bin/txect01$.Inexistente?P_LINGUA=001&P_TIPO=002&P_COD_LIS=" + textBox1.Text.Trim());
+            Text = Titulo + textBox1.Text.Trim();
         }
 
         private void Form1_Resize(object sender, EventArgs e)

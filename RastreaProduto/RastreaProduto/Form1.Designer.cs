@@ -54,14 +54,14 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.webBrowser1);
-            this.splitContainer1.Size = new System.Drawing.Size(320, 169);
-            this.splitContainer1.SplitterDistance = 25;
+            this.splitContainer1.Size = new System.Drawing.Size(484, 361);
+            this.splitContainer1.SplitterDistance = 27;
             this.splitContainer1.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(284, 3);
+            this.button1.Location = new System.Drawing.Point(448, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(35, 20);
             this.button1.TabIndex = 1;
@@ -75,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(0, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 20);
+            this.textBox1.Size = new System.Drawing.Size(443, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
@@ -85,18 +85,18 @@
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(320, 140);
+            this.webBrowser1.Size = new System.Drawing.Size(484, 330);
             this.webBrowser1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 169);
+            this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Digite o código do produto:";
+            this.Text = "Rastreio de código de produto: ";
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
